@@ -163,6 +163,19 @@ body {
 
 /* Habbo Shit Starts */
 
+::-webkit-scrollbar{
+    width:2px
+}
+::-webkit-scrollbar-track{
+    box-shadow:inset 0 0 5px #fff;
+    border-radius:10px
+}
+::-webkit-scrollbar-thumb{
+    background:#ee8e02;
+    border-radius:10px
+}
+
+
 .me{
     background:#292929;
     font-family:Rubik,sans-serif
@@ -171,14 +184,17 @@ body {
 .me__webview{
     position:fixed;
     width:100%;
-    height:95.80%;
+    top:34px;
     bottom:0;
     display:inline-flex!important
 }
 .me__fullscreen,
 .me__reload {
+    display: block;
+    width: 30px;
+    height: 30px;
     background: #ffb900;
-    border: 0px solid #ffea00;
+    border: 2px solid #ffea00;
     border-radius: 5px;
     color: #232323;
     font-size: 14px;
@@ -205,4 +221,11 @@ body {
     bottom: 0;
     z-index: 999;
     background-color: rgba(22, 22, 22, .7)
+}
+
+.notransition{
+    -webkit-transition:none!important;
+    -moz-transition:none!important;
+    -o-transition:none!important;
+    transition:none!important
 }
