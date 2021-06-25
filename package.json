@@ -2,11 +2,10 @@
 	"name": "BobbaRP",
 	"productName": "BobbaRP",
 	"version": "1.0.0",
-	"description": "Bobba Client - Flash Browser Application for Windows and Mac",
+	"description": "BobbaRP - Flash Client",
 	"license": "MIT",
 	"author": "Bobba California",
 	"main": "app.js",
-	"repository": "asteroid-dev/asteroidapp",
 	"flash_version": "32.0.0.363",
 	"scripts": {
 		"postinstall": "electron-builder install-app-deps",

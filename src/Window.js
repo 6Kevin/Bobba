@@ -21,6 +21,7 @@ class n {
 			pathname: s.join(__dirname, `../views/${c}.html`),
 			protocol: "file:",
 			slashes: !0,
+			icon: s.join(__dirname, "../resources/icons/64x64.png")
 		})), ["win32", "linux"].includes(process.platform) && this._window.removeMenu(), this._view = c, this._fullScreen = w, "home" === this._view && (i.register("Command+Shift+F", () => {
 			this._window.isFocused() && this._window.setFullScreen(!0)
 		}), i.register("Esc", () => {
