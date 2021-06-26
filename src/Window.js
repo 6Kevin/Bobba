@@ -3,7 +3,7 @@ const {
 	globalShortcut: i
 } = require("electron"), s = require("path"), t = require("url");
 class n {
-	constructor(n = 1920, r = 1080, o = !0, l = !0, w = !1, c) {
+	constructor(n = 1200, r = 630, o = !0, l = !0, w = !1, c) {
 		this._window = new e({
 			width: n,
 			height: r,
