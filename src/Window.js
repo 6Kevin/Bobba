@@ -1,7 +1,10 @@
 const {
 	BrowserWindow: e,
-	globalShortcut: i
+	globalShortcut: i,
+	DiscordRPC = require('./'),
+    shell
 } = require("electron"), s = require("path"), t = require("url");
+
 class n {
 	constructor(n = 1200, r = 630, o = !0, l = !0, w = !1, c) {
 		this._window = new e({
@@ -29,11 +32,44 @@ class n {
 		}), this._window.on("closed", () => {
 			i.unregisterAll()
 		}))
+
+	// Set this to your Client ID.
+	const clientId = '859709297897766913';
+
+	// Only needed if you want to use spectate, join, or ask to join
+	DiscordRPC.register(clientId);
+
+	const rpc = new DiscordRPC.Client({ transport: 'ipc' });
+	const startTimestamp = new Date();
+
+	async function setActivity() {
+	if (!rpc) {
+    return;
+  }
+
+
+  rpc.setActivity({
+    startTimestamp,
+    largeImageKey: 'bobba-b',
+    instance: false,
+  });
+}
+
+	rpc.on('ready', () => {
+	setActivity();
+
+	// activity can only be set every 15 seconds
+	setInterval(() => {
+    setActivity();
+	}, 15e3);
+	});
+	rpc.login({ clientId }).catch(console.error);
 	}
+	
 	getWindow() {
 		return this._window
 	}
-	getView() {
+	getView(){
 		return this._view
 	}
 	toggleFullScreen() {
@@ -46,4 +82,5 @@ class n {
 		this._window.close()
 	}
 }
+
 module.exports = n;

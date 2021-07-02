@@ -2,7 +2,9 @@ const {
 	app: e,
 	ipcMain: n,
 	session: r,
-	Menu: t
+	Menu: t,
+	Discord,
+	shell
 } = require("electron"), s = require("path"), i = require("./Windows").getInstance(), o = require("./Window"), c = require("os"), l = require("../package"), p = require("./Menu");
 
 e.setAppUserModelId("nl.habbo.BobbaRP");
